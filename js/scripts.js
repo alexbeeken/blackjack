@@ -113,16 +113,16 @@ $(function() {
     player1.getCards(deck.draw(1));
 
     if (player1.seeCards().length < 6) {
-      if (currentScore < 21) {
+
         $("#card" + (player1.seeCards().length.toString())).text(stringer.cardToString(player1.seeCards()[player1.seeCards().length-1]));
         $("#currentScoreDiv h2").text(score.score(player1.seeCards()));
         currentScore = score.score(player1.seeCards());
-      }
+
 
       currentScore.forEach( function(score) {
         if (score === 21) {
           alert("win");
-        } else if ((score > 21) && (score === currentScore[1])) {
+        } else if ((score > 21) && (score === currentScore[0])) {
           alert("lose");
         } else {
 
